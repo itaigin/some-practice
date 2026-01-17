@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    align-items: self-start;
+}
