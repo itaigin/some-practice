@@ -32,7 +32,7 @@ export const postSlice = createSlice({
             )
             .addCase(
                 fetchPosts.rejected,
-                (state, action: PayloadAction<any>) => {
+                (state, action: PayloadAction<string>) => {
                     state.isLoading = false;
                     state.error = action.payload;
                 },

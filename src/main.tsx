@@ -8,7 +8,6 @@ import { AppRoutes } from "./routes/Routes";
 
 const store = setupStore();
 
-// @ts-ignore
 createRoot(document.getElementById("root")).render(
     <StrictMode>
         <BrowserRouter>

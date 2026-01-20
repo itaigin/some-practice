@@ -1,13 +1,15 @@
 import { all, put, takeEvery } from "redux-saga/effects";
 import { countSlice } from "../reducers/CountSlice";
+import { PayloadAction } from "@reduxjs/toolkit";
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
 export function* helloSaga() {
+    yield () => {};
     console.log("Hello Sagas!");
 }
 
 // Our worker Saga: will perform the async increment task
-export function* incrementAsync(action: any) {
+export function* incrementAsync(action: PayloadAction<number>) {
     try {
         console.log("onIncrementAsync started with payload:", action.payload);
 
@@ -20,10 +22,10 @@ export function* incrementAsync(action: any) {
         const { increment } = countSlice.actions;
 
         // 4. Или просто инкремент
-        yield put(increment(action.payload));
+        yield put(increment());
 
         console.log("onIncrementAsync completed");
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("onIncrementAsync error:", error);
     }
 }

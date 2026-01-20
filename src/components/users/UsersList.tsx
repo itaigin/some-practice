@@ -8,19 +8,23 @@ export const UsersList = () => {
         (state) => state.userReducer,
     );
     const dispatch = useAppDispatch();
+
     useEffect(() => {
         dispatch(fetchUsers());
-    }, []);
+    }, [dispatch]);
 
-    if (error) return error;
-
-    const onDelete = useCallback((id: string) => {
-        dispatch(deleteUser(id));
-    }, []);
+    const onDelete = useCallback(
+        (id: string) => {
+            dispatch(deleteUser(id));
+        },
+        [dispatch],
+    );
 
     const onEdit = useCallback((id: string) => {
         console.log(id);
     }, []);
+
+    if (error) return error;
 
     return isLoading ? (
         <>...Loading</>

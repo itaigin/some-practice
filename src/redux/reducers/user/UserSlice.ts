@@ -45,9 +45,9 @@ export const userSlice = createSlice({
             )
             .addCase(
                 fetchUsers.rejected,
-                (state, action: PayloadAction<any>) => {
+                (state, action: PayloadAction<string>) => {
                     state.isLoading = false;
-                    state.error = action.payload;
+                    state.error = action.payload || "";
                 },
             )
             .addCase(deleteUser.fulfilled, (state, action) => {

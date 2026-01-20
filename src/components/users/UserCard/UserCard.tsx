@@ -3,8 +3,8 @@ import styles from "./user-card.module.css";
 
 type TUserCardProps = {
     user: TUser;
-    onEdit: (id: string) => void;
-    onDelete: (id: string) => void;
+    onEdit: (_id: string) => void;
+    onDelete: (_id: string) => void;
 };
 
 export const UserCard = ({ user, onEdit, onDelete }: TUserCardProps) => {

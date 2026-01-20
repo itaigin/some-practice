@@ -1,6 +1,7 @@
 import { USERS_LIST_ROUTE_MASK } from "@/api/constants";
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { TUser } from "@/types";
 
 /*export const fetchUsers = () => async (dispatch: AppDispatch)=> {
     try {
@@ -13,17 +14,18 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
     }
 }*/
 
-export const fetchUsers = createAsyncThunk(
-    "user/fetchAll",
-    async (_, thunkAPI) => {
-        try {
-            const response = await fetch(USERS_LIST_ROUTE_MASK);
-            return await response.json();
-        } catch (e) {
-            return thunkAPI.rejectWithValue("Error fetching users.");
-        }
-    },
-);
+export const fetchUsers = createAsyncThunk<
+    TUser[],
+    void,
+    { rejectValue: string }
+>("user/fetchAll", async (_, thunkAPI) => {
+    try {
+        const response = await fetch(USERS_LIST_ROUTE_MASK);
+        return await response.json();
+    } catch (_) {
+        return thunkAPI.rejectWithValue("Error fetching users.");
+    }
+});
 
 export const deleteUser = createAsyncThunk(
     "users/delete",
@@ -40,10 +42,10 @@ export const deleteUser = createAsyncThunk(
             console.log(response);
 
             return id; // Возвращаем ID удаленного пользователя
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.log(error);
             return thunkAPI.rejectWithValue(
-                error.message || `Error deleting user with ID: ${id}`,
+                `Error deleting user with ID: ${id}`,
             );
         }
     },
