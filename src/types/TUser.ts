@@ -1,4 +1,4 @@
-import {TId} from "./TId.ts";
+import { TId } from "./TId";
 
 export type TUser = TId & {
     username: string;
@@ -7,4 +7,4 @@ export type TUser = TId & {
     password: string;
     birthdate: Date;
     registeredAt: Date;
-}
+};

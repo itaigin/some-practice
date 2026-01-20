@@ -1,11 +1,12 @@
-import { useAppDispatch, useAppSelector } from "../../hooks/redux.ts";
+/*import { useAppDispatch, useAppSelector } from "../../hooks/redux.ts";
 import { useCallback, useEffect } from "react";
 import { fetchPosts } from "../../redux/reducers/post/PostCreators.ts";
 import { PostCard } from "./PostCard/PostCard.tsx";
-import { List } from "react-window";
+import { List } from "react-window";*/
 
 export const PostList = () => {
-    const { posts, isLoading, error } = useAppSelector((state) => state.postReducer)
+    return <div />;
+    /*const { posts, isLoading, error } = useAppSelector((state) => state.postReducer)
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(fetchPosts());
@@ -14,7 +15,7 @@ export const PostList = () => {
     const PostRow = useCallback(({ index, posts }) => {
         const post = posts[index];
 
-       /* // Индикатор загрузки в конце списка
+       /!* // Индикатор загрузки в конце списка
         if (index === posts.length && hasMore) {
             return (
                 <div style={style}>
@@ -23,7 +24,7 @@ export const PostList = () => {
                     </div>
                 </div>
             );
-        }*/
+        }*!/
 
         return (
             <PostCard
@@ -47,5 +48,5 @@ export const PostList = () => {
                 rowHeight={"100%"}
                 rowProps={{ posts }}
             />
-    )
-}
+    )*/
+};

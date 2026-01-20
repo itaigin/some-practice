@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { JSON_PLACEHOLDER_API } from "../../../api/constants.ts";
+import { JSON_PLACEHOLDER_API } from "@/api/constants";
 
 export const fetchPosts = createAsyncThunk(
     "posts/fetchPosts",
@@ -10,5 +10,5 @@ export const fetchPosts = createAsyncThunk(
         } catch (e) {
             thunkAPI.rejectWithValue("Error fetching posts.");
         }
-    }
-)
+    },
+);

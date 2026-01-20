@@ -1,20 +1,19 @@
 import { Menu } from "antd";
 import { Link } from "react-router";
-import { ROUTES } from "../constants.ts";
+import { ROUTES } from "../constants";
 import {
     HomeOutlined,
     DashboardOutlined,
     UserOutlined,
-} from '@ant-design/icons';
-
+} from "@ant-design/icons";
 
 export const AppMenu = () => {
     const getSelectedKey = () => {
         const path = location.pathname;
-        if (path === '/') return 'home';
-        if (path.startsWith(ROUTES.POSTS)) return 'posts';
-        if (path.startsWith(ROUTES.USERS)) return 'users';
-        return 'home';
+        if (path === "/") return "home";
+        if (path.startsWith(ROUTES.POSTS)) return "posts";
+        if (path.startsWith(ROUTES.USERS)) return "users";
+        return "home";
     };
 
     return (
@@ -36,5 +35,5 @@ export const AppMenu = () => {
                 <Link to={ROUTES.USERS}>Users</Link>
             </Menu.Item>
         </Menu>
-    )
-}
+    );
+};

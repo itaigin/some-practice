@@ -2,12 +2,34 @@ name: check.yml
 on: push
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Install deps
-        run: npm ci
-      - name: Lint
-        run: npm run lint
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v6
+            - name: Install deps
+              run: npm ci
+            - name: Lint
+              run: npm run lint
+    test:
+        needs: lint
+        strategy:
+            matrix:
+                version: [20, 23]
+                os: [ubuntu-latest, windows-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v6
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: ${{ matrix.version }}
+            - name: Install deps
+              run: npm ci
+            - name: Test
+              run: npm run test
+    secret:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print secret
+              run: echo ${{ secrets.TEST }}

@@ -1,5 +1,5 @@
-import {useAppDispatch, useAppSelector} from "../hooks/redux.ts";
-import { countSlice } from "../redux/reducers/CountSlice.ts";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
+import { countSlice } from "@/redux/reducers/CountSlice";
 
 export const Count = () => {
     const count = useAppSelector((state) => state.countReducer.count);
@@ -7,15 +7,15 @@ export const Count = () => {
     const dispatch = useAppDispatch();
 
     const onIncrement = () => {
-        dispatch(increment(1));
+        dispatch(increment());
     };
 
     const onIncrementAsync = () => {
-        dispatch(incrementAsync(1));
+        dispatch(incrementAsync());
     };
 
     const onDecrement = () => {
-        dispatch(decrement(1));
+        dispatch(decrement());
     };
 
     return (
@@ -25,5 +25,5 @@ export const Count = () => {
             <button onClick={onIncrementAsync}>Увеличить счетчик async</button>
             <button onClick={onDecrement}>Уменьшить счетчик</button>
         </div>
-    )
-}
+    );
+};

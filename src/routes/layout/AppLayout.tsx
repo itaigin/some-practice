@@ -1,7 +1,7 @@
 import { Layout } from "antd";
-import styles from "./app-layout.module.css"
+import styles from "./app-layout.module.css";
 import { Outlet } from "react-router";
-import { AppMenu } from "./AppMenu.tsx";
+import { AppMenu } from "./AppMenu";
 
 export const AppLayout = () => {
     return (
@@ -13,5 +13,5 @@ export const AppLayout = () => {
                 <Outlet />
             </Layout.Content>
         </Layout>
-    )
-}
+    );
+};

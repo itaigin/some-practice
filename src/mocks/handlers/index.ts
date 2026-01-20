@@ -1,5 +1,3 @@
-import { getUsersHandlers } from './users.handlers.ts';
+import { getUsersHandlers } from "./users.handlers";
 
-export const handlers = [
-    ...getUsersHandlers,
-];
+export const handlers = [...getUsersHandlers];

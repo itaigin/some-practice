@@ -1,9 +1,7 @@
-import { UsersList } from "../../components/users/UsersList.tsx";
+import { UsersList } from "@/components/users/UsersList";
 
 const Users = () => {
-    return (
-        <UsersList />
-    )
-}
+    return <UsersList />;
+};
 
 export default Users;

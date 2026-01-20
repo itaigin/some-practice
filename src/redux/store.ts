@@ -1,17 +1,17 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import countReducer from "./reducers/CountSlice.ts";
-import userReducer from "./reducers/user/UserSlice.ts";
-import postReducer from "./reducers/post/PostSlice.ts";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import countReducer from "./reducers/CountSlice";
+import userReducer from "./reducers/user/UserSlice";
+import postReducer from "./reducers/post/PostSlice";
 import createSagaMiddleware from "redux-saga";
-import rootSaga from "./sagas/sagas.ts";
+import rootSaga from "./sagas/sagas";
 
 const rootReducer = combineReducers({
     countReducer,
     userReducer,
     postReducer,
-})
+});
 
-const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware();
 
 export const setupStore = () => {
     const store = configureStore({
@@ -26,5 +26,5 @@ export const setupStore = () => {
 };
 
 export type RootState = ReturnType<typeof rootReducer>;
-export type AppStore = ReturnType<typeof  setupStore>;
-export type AppDispatch = AppStore['dispatch'];
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore["dispatch"];

@@ -1,7 +1,7 @@
-import { PostList } from "../../components/post/PostList.tsx";
+import { PostList } from "@/components/post/PostList";
 
 const Posts = () => {
-    return <PostList />
-}
+    return <PostList />;
+};
 
 export default Posts;
