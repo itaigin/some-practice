@@ -12,7 +12,11 @@
         "lint-staged": "lint-staged",
         "prepare": "husky",
         "pretty:check": "prettier --check src/**/*.{ts,tsx,css,scss}",
-        "pretty:write": "prettier --write src/**/*.{ts,tsx,css,scss}"
+        "pretty:write": "prettier --write src/**/*.{ts,tsx,css,scss}",
+        "docker:build": "docker build -t some-practice .",
+        "docker:run": "docker run -p 3000:3000 --name some-practice some-practice:latest",
+        "docker:dev": "docker-compose -f docker-compose.dev.yml up",
+        "docker:prod": "docker-compose -f docker-compose.prod.yml up -d"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
