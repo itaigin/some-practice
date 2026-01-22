@@ -16,6 +16,7 @@ export default (env: EnvVariables) => {
         html: path.resolve(__dirname, "src", "index.html"),
         public: path.resolve(__dirname, "public"),
         src: path.resolve(__dirname, "src"),
+        components: path.resolve(__dirname, "src", "components"),
     };
 
     const config: webpack.Configuration = buildWebpack({

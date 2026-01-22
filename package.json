@@ -16,7 +16,8 @@
         "docker:build": "docker build -t some-practice .",
         "docker:run": "docker run -p 3000:3000 --name some-practice some-practice:latest",
         "docker:dev": "docker-compose -f docker-compose.dev.yml up",
-        "docker:prod": "docker-compose -f docker-compose.prod.yml up -d"
+        "docker:prod": "docker-compose -f docker-compose.prod.yml up -d",
+        "typecheck": "tsc"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
@@ -24,7 +25,9 @@
     "dependencies": {
         "@faker-js/faker": "^10.2.0",
         "@reduxjs/toolkit": "^2.11.2",
+        "@svgr/webpack": "^8.1.0",
         "antd": "^6.2.0",
+        "babel-loader": "^10.0.0",
         "faker": "^6.6.6",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
@@ -81,7 +84,7 @@
         "ts-node": "^10.9.2",
         "typescript": "^5.9.3",
         "webpack": "^5.104.1",
-        "webpack-bundle-analyzer": "^5.1.1",
+        "webpack-bundle-analyzer": "^5.2.0",
         "webpack-cli": "^6.0.1",
         "webpack-dev-server": "^5.2.3",
         "webpack-merge": "^6.0.1",

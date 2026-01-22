@@ -128,6 +128,23 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
    // const babelLoader = buildBabelLoader(options);
 
+    const babelLoader = {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: [
+                    "@babel/preset-env",
+                    "@babel/preset-typescript",
+                    ["@babel/preset-react", {
+                        runtime: isDev ? "automatic" : "classic"
+                    }],
+                ]
+            }
+        }
+    }
+
     return [
         assetLoader,
         cssLoader,

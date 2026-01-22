@@ -6,6 +6,7 @@ export function buildResolvers(options: BuildOptions): Configuration['resolve'] 
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
             '@': options.paths.src,
+            '@components': options.paths.components,
         },
     }
 }

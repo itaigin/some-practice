@@ -24,7 +24,8 @@
         "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "@/components": ["./src/components*"]
         }
     },
     "ts-node": {
