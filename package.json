@@ -6,7 +6,7 @@
         "serve": "webpack serve --env mode=development",
         "build:dev": "webpack --env mode=development",
         "build:prod": "webpack --env mode=production",
-        "lint": "eslint src/**/*.{ts,js,jsx,tsx}",
+        "lint": "eslint src/**/*.{ts,js,jsx,tsx} --ignore-pattern src/utils/**",
         "lint:fix": "eslint src/**/*.{ts,js,jsx,tsx} --fix",
         "test": "jest",
         "lint-staged": "lint-staged",

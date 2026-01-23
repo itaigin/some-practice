@@ -1,4 +1,3 @@
-// promiseAny.test.ts
 import { promiseAny } from "./any";
 
 describe("promiseAny", () => {
